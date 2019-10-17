@@ -10,26 +10,36 @@ namespace ConsoleApp1
     {
         int guess = -1;
         int intputNum = 0;
-        
-        public void gusseNumPlay()
+
+        public void gusseNumPlay()        
         {
             
-            guess = new Random().Next(50);
-            while (true)
+            try
             {
-                string inputStr = Console.ReadLine();
-                int intputNum = Int32.Parse(inputStr);
-                if(guess == intputNum)
+                guess = new Random().Next(50);
+                while (true)
                 {
-                    break;
+                    string inputStr = Console.ReadLine();
+                    int intputNum = Int32.Parse(inputStr);
+                    if (guess == intputNum)
+                    {
+                        break;
+                    }
+                    else
+                    {
+                        Console.WriteLine("猜錯了");
+                    }
                 }
-                else
-                {
-                    Console.WriteLine("猜錯了");
-                }
+                Console.WriteLine("猜對了");
+                Console.ReadKey();
+
             }
-            Console.WriteLine("猜對了");
-            Console.ReadKey();
+            catch(Exception exp)
+            {
+                Console.WriteLine(exp);
+                throw;
+            }
+            
         }
     }
 }
