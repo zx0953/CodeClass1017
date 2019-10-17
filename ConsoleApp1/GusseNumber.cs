@@ -13,7 +13,8 @@ namespace ConsoleApp1
         
         public void gusseNumPlay()
         {
-            guess = new Random().Next(100);
+            
+            guess = new Random().Next(50);
             while (true)
             {
                 string inputStr = Console.ReadLine();
