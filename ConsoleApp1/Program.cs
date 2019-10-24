@@ -10,8 +10,23 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            GusseNumber gusseNumber = new GusseNumber();
-            gusseNumber.gusseNumPlay();
+            try
+            {
+                string C = Console.ReadLine();
+                if (C == "1")
+                {
+                    GusseNumber gusseNumber = new GusseNumber();
+                    gusseNumber.gusseNumPlay();
+                }else if(C == "2")
+                {
+                    ABhowMany aBhowMany = new ABhowMany();
+                    aBhowMany.abPlay();
+                }
+            }
+            catch (Exception exp)
+            {
+                Console.WriteLine(exp.ToString());
+            }            
 
         }
     }

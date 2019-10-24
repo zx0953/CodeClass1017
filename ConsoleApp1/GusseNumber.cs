@@ -8,12 +8,12 @@ namespace ConsoleApp1
 {
     class GusseNumber
     {
+        
         int guess = -1;
         int intputNum = 0;
 
-        public void gusseNumPlay()        
+        public void gusseNumPlay()
         {
-            
             try
             {
                 guess = new Random().Next(9);
@@ -21,28 +21,36 @@ namespace ConsoleApp1
                 while (true)
                 {
                     string inputStr = Console.ReadLine();
-                    int intputNum = Int32.Parse(inputStr);
-                    Int32.TryParse(inputStr,out intputNum);
-                    if (guess == intputNum) 
+                    if (Int32.TryParse(inputStr, out intputNum))
                     {
-                        break;
+                        if(intputNum <= 9 && intputNum >= 0)
+                        {
+                            if (guess == intputNum)
+                            {
+                                break;
+                            }
+                            else
+                            {
+                                Console.WriteLine("猜錯了");
+                            }
+                        }
+                        else { Console.WriteLine("0~9啦 艮!!"); }                       
                     }
                     else
                     {
-                        Console.WriteLine("猜錯了");
+                        Console.WriteLine("請輸入數字 0~9");
+                        continue;
                     }
                 }
                 Console.WriteLine("恭喜 恭喜 猜對了");
                 Console.ReadKey();
-
             }
-            catch(Exception exp)
+            catch (Exception exp)
             {
-
-                Console.WriteLine(exp);
+                Console.WriteLine(exp.ToString());
                 throw;
             }
-            
         }
     }
+    
 }
