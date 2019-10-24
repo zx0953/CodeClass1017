@@ -16,12 +16,14 @@ namespace ConsoleApp1
             
             try
             {
-                guess = new Random().Next(50);
+                guess = new Random().Next(9);
+                Console.WriteLine("0~9 猜一個數字");
                 while (true)
                 {
                     string inputStr = Console.ReadLine();
                     int intputNum = Int32.Parse(inputStr);
-                    if (guess == intputNum)
+                    Int32.TryParse(inputStr,out intputNum);
+                    if (guess == intputNum) 
                     {
                         break;
                     }
@@ -30,12 +32,13 @@ namespace ConsoleApp1
                         Console.WriteLine("猜錯了");
                     }
                 }
-                Console.WriteLine("猜對了");
+                Console.WriteLine("恭喜 恭喜 猜對了");
                 Console.ReadKey();
 
             }
             catch(Exception exp)
             {
+
                 Console.WriteLine(exp);
                 throw;
             }
