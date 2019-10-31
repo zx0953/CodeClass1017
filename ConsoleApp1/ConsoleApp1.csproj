@@ -44,7 +44,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ABhowMany.cs" />
+    <Compile Include="Avatar.cs" />
+    <Compile Include="Calculator.cs" />
     <Compile Include="GusseNumber.cs" />
+    <Compile Include="Monster.cs" />
+    <Compile Include="NPC.cs" />
+    <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
